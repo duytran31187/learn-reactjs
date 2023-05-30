@@ -1,5 +1,14 @@
 function ExpenseItem() {
-    return <h2>Expense item ! </h2>;
+    // rule: only one root element
+    return (
+        <div>
+            <div>Date</div>
+            <div>
+                <h2>Title</h2>
+                <div>Amount</div>
+            </div>
+        </div>
+    )
 }
 
 export default ExpenseItem;
