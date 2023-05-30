@@ -1,2 +1,0 @@
-# learn-reactjs
-learn reactjs
