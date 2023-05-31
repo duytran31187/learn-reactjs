@@ -11,6 +11,9 @@ const ExpenseItem = (props) => { // jsx just use only one params: props. not as 
             <div className='expense-item__description'>
                 <h2>{props.title}</h2>
                 <Card className='expense-item__price'>${props.amount}</Card>
+                <button onClick={() => {
+                    console.log('clicked');
+                }}>Change Title</button>
             </div>
         </Card>
     )
