@@ -12,23 +12,34 @@ const ExpenseForm = () => {
 
   const titleChangeHandler = (event) => {
     console.log('Title changed !!!', event.target.value);
-    setUserInput({
-      ...userInput,
-      enteredTitle: event.target.value
+    // with this approach, enteredTitle might be merged with outdated data
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: event.target.value
+    // });
+    // with this approach, React ensure merge with latest data
+    setUserInput((prevState) => {
+      return {...prevState, enteredTitle: event.target.value};
     });
   };
   const amountChangeHandler = (event) => {
     console.log('amount changed !!!', event.target.value);
-    setUserInput({
-      ...userInput,
-      enteredAmount: event.target.value
+    // setUserInput({
+    //   ...userInput,
+    //   enteredAmount: event.target.value
+    // });
+    setUserInput((prevState) => {
+      return {...prevState, enteredAmount: event.target.value};
     });
   };
   const dateChangeHandler = (event) => {
     console.log('date changed !!!', event.target.value);
-    setUserInput({
-      ...userInput,
-      enteredDate: event.target.value
+    // setUserInput({
+    //   ...userInput,
+    //   enteredDate: event.target.value
+    // });
+    setUserInput((prevState) => {
+      return {...prevState, enteredDate: event.target.value};
     });
   };
 
