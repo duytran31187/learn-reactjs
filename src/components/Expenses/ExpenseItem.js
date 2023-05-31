@@ -1,6 +1,6 @@
 import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate.js';
-import Card from './Card.js';
+import Card from '../UI/Card';
 
 function ExpenseItem(props) { // jsx just use only one params: props. not as js function(data,title, amount)
     // rule: only one root element
