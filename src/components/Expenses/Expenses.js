@@ -14,9 +14,14 @@ const Expenses = (props) => {
     return (
         <Card className="expenses">
             <ExpensesFilter filteredYear={filteredYear} onFilterChanged={filterChangeHandler}></ExpensesFilter>
-            {props.items.map(item => (
-                <ExpenseItem key={item.id} date={item.date} title={item.title} amount={item.amount}></ExpenseItem>
-                )
+            {props.items.map((item, idx) => (
+                <ExpenseItem 
+                key={item.id} // for Reactjs : we should always add Key when managing list
+                date={item.date} 
+                title={item.title}
+                amount={item.amount} 
+                />
+            )
             )}
         </Card>
     );
