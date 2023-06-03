@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Button from '../../UI/Button/Button';
-import './CourseInput.css';
+import anyNameStyles from  './CourseInput.module.css';
 import styled from 'styled-components';
 
 
@@ -57,10 +57,10 @@ const CourseInput = props => {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <FormControl invalid={!isValid}>
-        <label>Course Goal</label>
+      <div className={`${anyNameStyles['form-control']} ${!isValid && anyNameStyles.invalid}`}>
+        <label style={{color: isValid ? 'black' : 'orange'}}>Course Goal</label>
         <input type="text" onChange={goalInputChangeHandler} />
-      </FormControl>
+      </div>
       <Button type="submit">Add Goal</Button>
     </form>
   );
